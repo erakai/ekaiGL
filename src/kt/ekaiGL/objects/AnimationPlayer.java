@@ -301,7 +301,7 @@ public class AnimationPlayer {
     }
 
     /**
-     * Gets the frames per second of this AnimationPlayer.
+     * Gets the frames per second of this AnimationPlayer.t
      *
      * @return The frames per second.
      */

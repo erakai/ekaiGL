@@ -5,10 +5,12 @@ import kt.ekaiGL.display.Screen;
 /**
  * @author Kai Tinkess on February 24, 2020.
  */
-public class Game implements Updatable {
+public abstract class Game implements Updatable {
+    private final InputHandler input;
 
-    public Game(String title) {
+    public Game(String title, InputHandler input) {
         Screen.initDisplay(title);
+        this.input = input;
     }
 
     @Override
@@ -16,4 +18,5 @@ public class Game implements Updatable {
 
     }
 
+    public abstract void initResourceManager(String filepath);
 }
