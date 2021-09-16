@@ -30,8 +30,6 @@ public class Screen extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g) {
-        // Do something with frame time.
-
         super.paintComponent(g);
 
         for (Renderable r: renderables) r.render(g, r.getEPoint());
