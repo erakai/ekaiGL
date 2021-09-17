@@ -1,5 +1,8 @@
 package kt.ekaiGL.display;
 
+import kt.ekaiGL.core.InputHandler;
+import kt.ekaiGL.util.Globals;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -19,13 +22,24 @@ public class Screen extends JPanel {
         return instance;
     }
 
-    public static void initDisplay(String title) {
+    public static void initDisplay(String title, InputHandler input) {
         frame = new JFrame(title);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         instance = new Screen();
+        instance.init(input);
         frame.add(instance);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    private void init(InputHandler input) {
+        setFocusable(true);
+        setLayout(null);
+        setPreferredSize(new Dimension((int) Globals.constant("TILE_WIDTH"), (int) Globals.constant("TILE_HEIGHT")));
+        setBackground(Color.BLACK);
+
+        addMouseListener(input);
+        addKeyListener(input);
     }
 
     @Override

@@ -20,8 +20,9 @@ public abstract class Game {
     private boolean running = true;
 
     public Game(String title, InputHandler input) {
-        Screen.initDisplay(title);
+        Screen.initDisplay(title, input);
         this.input = input;
+        addUpdatable(input);
     }
 
     public void start() {
