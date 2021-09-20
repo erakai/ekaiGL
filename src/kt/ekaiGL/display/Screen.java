@@ -15,6 +15,7 @@ public class Screen extends JPanel {
     private static JFrame frame;
     private static Screen instance;
 
+    //TODO: Add scenes
     private final static List<Renderable> renderables = new ArrayList<>();
     private final static List<Renderable> toRemove = new ArrayList<>();
 
@@ -40,6 +41,7 @@ public class Screen extends JPanel {
 
         addMouseListener(input);
         addKeyListener(input);
+        addMouseListener(input);
     }
 
     @Override

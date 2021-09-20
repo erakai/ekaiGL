@@ -16,7 +16,6 @@ public abstract class Entity implements Renderable {
         this.loc = loc;
 
         anim = new AnimationPlayer();
-
     }
 
     public Entity(String name) {

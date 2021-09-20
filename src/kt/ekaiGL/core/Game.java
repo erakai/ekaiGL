@@ -26,11 +26,13 @@ public abstract class Game {
     }
 
     public void start() {
-        setProperFrameLength();
-        lastFrame = System.currentTimeMillis();
-        while (running) {
-            update(System.currentTimeMillis() - lastFrame);
-        }
+        new Thread(() -> {
+            setProperFrameLength();
+            lastFrame = System.currentTimeMillis();
+            while (running) {
+                update(System.currentTimeMillis() - lastFrame);
+            }
+        }).start();
     }
 
     public void update(long frameLength) {
@@ -51,6 +53,8 @@ public abstract class Game {
 
         updatables.removeAll(toRemove);
         toRemove.clear();
+
+        Screen.instance().repaint();
     }
 
     public void setProperFrameLength() {
