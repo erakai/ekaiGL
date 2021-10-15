@@ -1,4 +1,4 @@
-package kt.ekaiGL.objects;
+package kt.ekaiGL.entities;
 
 import kt.ekaiGL.display.EPoint;
 import kt.ekaiGL.display.Renderable;

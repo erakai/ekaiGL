@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @author Kai Tinkess on February 25, 2020.
@@ -48,7 +50,9 @@ public class Screen extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        for (Renderable r: renderables) r.render(g, r.getEPoint());
+        Map<Integer, Renderable> layeredRender = new TreeMap<>();
+        for (Renderable r: renderables) layeredRender.put(r.getLayer(), r);
+        for (Integer i: layeredRender.keySet()) layeredRender.get(i).render(g, layeredRender.get(i).getEPoint());
 
         renderables.removeAll(toRemove);
         toRemove.clear();

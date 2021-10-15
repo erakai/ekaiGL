@@ -1,4 +1,4 @@
-package kt.ekaiGL.objects;
+package kt.ekaiGL.entities;
 
 import java.awt.image.BufferedImage;
 import java.util.Arrays;

@@ -1,6 +1,4 @@
-package kt.ekaiGL.objects;
-
-import kt.ekaiGL.objects.Animation;
+package kt.ekaiGL.entities;
 
 import java.awt.image.BufferedImage;
 import java.util.*;
